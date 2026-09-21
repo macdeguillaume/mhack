@@ -5,11 +5,11 @@ interface Props {
 }
 
 const {
-  title = "Mhack — Agence Cold Call B2B",
-  description = "Mhack génère des rendez-vous qualifiés pour votre équipe commerciale grâce au cold calling B2B nouvelle génération.",
+  title = "lineup — Head of Sales externalisé",
+  description = "lineup génère des rendez-vous qualifiés pour votre équipe commerciale grâce au cold calling B2B nouvelle génération.",
 } = Astro.props;
 
-const siteUrl = "https://mhack.fr";
+const siteUrl = "https://lineup.fr";
 
 import "../styles/global.css";
 ---
@@ -43,13 +43,13 @@ import "../styles/global.css";
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Mhack",
+      "name": "lineup",
       "url": siteUrl,
       "description": description,
       "foundingDate": "2024",
       "areaServed": "FR",
       "serviceType": "Cold Calling B2B",
-      "sameAs": ["https://www.linkedin.com/company/mhack"],
+      "sameAs": ["https://www.linkedin.com/company/lineup"],
     })} />
 
   </head>

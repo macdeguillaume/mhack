@@ -32,7 +32,7 @@ const steps = [
     <div class="text-center mb-16 reveal">
       <h2 class="font-display text-3xl md:text-4xl font-bold mb-4">
         Un Head of Sales externalisé,<br/>
-        <span class="text-accent">pas une agence de calls</span>
+        <span class="text-gold">pas une agence de calls</span>
       </h2>
       <p class="text-text-muted max-w-2xl mx-auto">
         Vous n'obtenez pas juste des appels. Vous obtenez la stratégie, les systèmes et l'exécution d'un Head of Sales senior — sans le recruter.
@@ -43,10 +43,10 @@ const steps = [
     <div class="grid md:grid-cols-2 gap-6 mb-20">
       {steps.map((step, i) => (
         <div
-          class="reveal bg-bg-card border border-border rounded-xl p-8 hover:border-accent/50 transition-colors"
+          class="reveal bg-bg-card border border-border rounded-xl p-8 hover:border-gold/50 transition-colors"
           style={`transition-delay: ${i * 100}ms`}
         >
-          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-accent/10 text-accent font-display font-bold text-sm mb-4">
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gold/10 text-gold font-display font-bold text-sm mb-4">
             {step.number}
           </span>
           <h3 class="font-display text-lg font-semibold mb-2">{step.title}</h3>
@@ -55,10 +55,10 @@ const steps = [
       ))}
     </div>
 
-    <!-- Comparatif SDR vs Mhack -->
+    <!-- Comparatif SDR vs lineup -->
     <div class="reveal">
       <h3 class="font-display text-2xl md:text-3xl font-bold text-center mb-12">
-        Recruter un SDR, ou confier vos appels <span class="text-accent">à un expert</span>
+        Recruter un SDR, ou confier vos appels <span class="text-gold">à un expert</span>
       </h3>
 
       <div class="grid md:grid-cols-2 gap-6">
@@ -85,11 +85,11 @@ const steps = [
           </ul>
         </div>
 
-        <!-- Mhack -->
-        <div class="bg-bg-card border border-accent ring-1 ring-accent/30 rounded-xl p-8">
+        <!-- lineup -->
+        <div class="bg-bg-card border border-gold ring-1 ring-gold/30 rounded-xl p-8">
           <div class="flex items-center gap-3 mb-6">
-            <span class="w-3 h-3 rounded-full bg-accent"></span>
-            <h4 class="font-display text-lg font-semibold">Mhack — Head of Sales externalisé</h4>
+            <span class="w-3 h-3 rounded-full bg-gold"></span>
+            <h4 class="font-display text-lg font-semibold">lineup — Head of Sales externalisé</h4>
           </div>
           <ul class="space-y-4">
             {[
@@ -102,7 +102,7 @@ const steps = [
             ].map((row) => (
               <li class="flex justify-between items-start border-b border-border pb-3 last:border-0">
                 <span class="text-text-muted text-sm">{row.label}</span>
-                <span class="text-sm text-accent font-semibold text-right">{row.value}</span>
+                <span class="text-sm text-gold font-semibold text-right">{row.value}</span>
               </li>
             ))}
           </ul>

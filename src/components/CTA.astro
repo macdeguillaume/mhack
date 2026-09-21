@@ -10,8 +10,8 @@ const { text, variant = "primary", href, calendly = false } = Astro.props;
 const tag = href ? "a" : "button";
 const classes =
   variant === "primary"
-    ? "bg-accent hover:bg-accent-hover text-white font-semibold"
-    : "border border-border hover:border-accent text-text hover:text-accent";
+    ? "bg-white hover:bg-accent-hover text-bg font-semibold"
+    : "border border-border hover:border-gold text-text hover:text-gold";
 ---
 
 {tag === "a" ? (
