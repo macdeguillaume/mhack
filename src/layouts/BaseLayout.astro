@@ -1,0 +1,75 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Mhack — Agence Cold Call B2B",
+  description = "Mhack génère des rendez-vous qualifiés pour votre équipe commerciale grâce au cold calling B2B nouvelle génération.",
+} = Astro.props;
+
+const siteUrl = "https://mhack.fr";
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- OG Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteUrl}/og-image.png`} />
+    <meta property="og:locale" content="fr_FR" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}/og-image.png`} />
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Mhack",
+      "url": siteUrl,
+      "description": description,
+      "foundingDate": "2024",
+      "areaServed": "FR",
+      "serviceType": "Cold Calling B2B",
+      "sameAs": ["https://www.linkedin.com/company/mhack"],
+    })} />
+
+    <link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
+  <body class="bg-bg text-text font-body antialiased">
+    <slot />
+
+    <!-- Scroll reveal observer -->
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>

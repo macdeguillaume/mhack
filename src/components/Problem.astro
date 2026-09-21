@@ -1,0 +1,48 @@
+---
+const problems = [
+  {
+    icon: "🔄",
+    title: "SDR turnover chronique",
+    description:
+      "Vous recrutez, formez, perdez. Le cycle infernal des commerciaux qui partent avant d'avoir performé. Temps perdu, budget cramé.",
+  },
+  {
+    icon: "📉",
+    title: "Volume ≠ Qualité",
+    description:
+      "Les agences classiques promettent des centaines d'appels. Résultat : des leads tièdes qui ne signent jamais. Le volume sans pertinence, c'est du bruit.",
+  },
+  {
+    icon: "📵",
+    title: "Vos prospects raccrochent",
+    description:
+      "Scripts génériques, approche robotique, zéro personnalisation. Normal qu'ils ne décrochent plus. Le cold call médiocre a tué la réputation du cold call.",
+  },
+];
+---
+
+<section id="probleme" class="py-24 bg-bg-card">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="text-center mb-16 reveal">
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-4">
+        Le cold call classique est <span class="text-accent">mort.</span>
+      </h2>
+      <p class="text-text-muted max-w-2xl mx-auto">
+        Si vous vous reconnaissez dans l'un de ces scénarios, on peut probablement vous aider.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      {problems.map((problem, i) => (
+        <div
+          class="reveal bg-bg border border-border rounded-xl p-8 hover:border-accent/50 transition-colors"
+          style={`transition-delay: ${i * 100}ms`}
+        >
+          <span class="text-3xl mb-4 block">{problem.icon}</span>
+          <h3 class="font-display text-xl font-semibold mb-3">{problem.title}</h3>
+          <p class="text-text-muted text-sm leading-relaxed">{problem.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

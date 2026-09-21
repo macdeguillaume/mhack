@@ -1,0 +1,46 @@
+---
+import CTA from "./CTA.astro";
+---
+
+<section class="relative min-h-screen flex items-center justify-center grain overflow-hidden">
+  <!-- Gradient background -->
+  <div
+    class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(249,115,22,0.08)_0%,_transparent_70%)]"
+  ></div>
+
+  <div class="relative z-10 mx-auto max-w-4xl px-6 text-center pt-24 pb-20">
+    <!-- Badge -->
+    <div class="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-1.5 mb-8">
+      <span class="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
+      <span class="text-sm text-accent font-medium">Le cold call réinventé</span>
+    </div>
+
+    <!-- H1 -->
+    <h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-6">
+      Vos prospects décrochent.
+      <br />
+      <span class="text-accent">On s'occupe du reste.</span>
+    </h1>
+
+    <!-- Subtitle -->
+    <p class="text-lg md:text-xl text-text-muted max-w-2xl mx-auto mb-10">
+      Mhack génère des rendez-vous qualifiés pour votre équipe commerciale.
+      Cold call B2B, mais en mieux.
+    </p>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
+      <CTA text="Réserver un call" variant="primary" calendly />
+      <CTA text="Voir nos résultats ↓" variant="secondary" href="#resultats" />
+    </div>
+
+    <!-- Hero stat -->
+    <div class="inline-flex items-center gap-3 bg-bg-card/60 border border-border rounded-xl px-6 py-4">
+      <span class="font-display text-3xl md:text-4xl font-bold text-accent">18%</span>
+      <div class="text-left">
+        <p class="text-sm text-text font-medium">Taux de connexion</p>
+        <p class="text-xs text-text-muted">vs 4-7% moyenne industrie</p>
+      </div>
+    </div>
+  </div>
+</section>

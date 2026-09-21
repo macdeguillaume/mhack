@@ -1,0 +1,38 @@
+---
+interface Props {
+  text: string;
+  variant?: "primary" | "secondary";
+  href?: string;
+  calendly?: boolean;
+}
+
+const { text, variant = "primary", href, calendly = false } = Astro.props;
+const tag = href ? "a" : "button";
+const classes =
+  variant === "primary"
+    ? "bg-accent hover:bg-accent-hover text-white font-semibold"
+    : "border border-border hover:border-accent text-text hover:text-accent";
+---
+
+{tag === "a" ? (
+  <a
+    href={href}
+    class:list={[
+      "inline-flex items-center justify-center px-7 py-3.5 rounded-lg text-base transition-all duration-200 cursor-pointer",
+      classes,
+    ]}
+    data-calendly={calendly ? "true" : undefined}
+  >
+    {text}
+  </a>
+) : (
+  <button
+    class:list={[
+      "inline-flex items-center justify-center px-7 py-3.5 rounded-lg text-base transition-all duration-200 cursor-pointer",
+      classes,
+    ]}
+    data-calendly={calendly ? "true" : undefined}
+  >
+    {text}
+  </button>
+)}

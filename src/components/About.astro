@@ -1,0 +1,44 @@
+---
+import CTA from "./CTA.astro";
+---
+
+<section id="apropos" class="py-24 bg-bg-card">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Illustration placeholder -->
+      <div class="reveal flex justify-center">
+        <div class="w-64 h-80 md:w-80 md:h-96 bg-bg border border-border rounded-2xl flex items-center justify-center">
+          <div class="text-center">
+            <div class="text-8xl mb-4">🎧</div>
+            <p class="text-text-muted text-xs">Illustration fondateur</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bio -->
+      <div class="reveal" style="transition-delay: 150ms">
+        <h2 class="font-display text-3xl md:text-4xl font-bold mb-6">
+          Salut, moi c'est <span class="text-accent">le fondateur.</span>
+        </h2>
+        <div class="space-y-4 text-text-muted leading-relaxed">
+          <p>
+            J'ai passé des années à faire du cold call B2B. Le genre de truc que personne
+            ne met sur son profil LinkedIn, mais qui remplit les pipelines.
+          </p>
+          <p>
+            J'ai vu les agences promettre la lune et livrer du bruit. J'ai vu des SDR
+            talentueux cramer en 6 mois. Alors j'ai monté Mhack : une équipe de callers
+            qui savent vraiment décrocher des rendez-vous.
+          </p>
+          <p>
+            Pas de bullshit, pas de dashboards vides. Juste des rendez-vous qualifiés
+            dans votre agenda. Et si ça ne marche pas, on ajuste. Simple.
+          </p>
+        </div>
+        <div class="mt-8">
+          <CTA text="On en parle ?" variant="primary" calendly />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

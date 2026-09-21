@@ -1,0 +1,48 @@
+---
+import { steps } from "../data/method-steps";
+---
+
+<section id="methode" class="py-24">
+  <div class="mx-auto max-w-4xl px-6">
+    <div class="text-center mb-16 reveal">
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-4">
+        Notre <span class="text-accent">méthode</span>
+      </h2>
+      <p class="text-text-muted max-w-xl mx-auto">
+        Un process éprouvé en 4 étapes pour transformer le cold call en machine à rendez-vous.
+      </p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="relative">
+      <!-- Vertical line -->
+      <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px"></div>
+
+      {steps.map((step, i) => (
+        <div
+          class:list={[
+            "reveal relative flex items-start gap-6 mb-12 last:mb-0",
+            i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse",
+          ]}
+          style={`transition-delay: ${i * 150}ms`}
+        >
+          {/* Number circle */}
+          <div class="relative z-10 flex-shrink-0 w-12 h-12 rounded-full bg-accent text-white font-display font-bold flex items-center justify-center text-sm md:absolute md:left-1/2 md:-translate-x-1/2">
+            {step.number}
+          </div>
+
+          {/* Content card */}
+          <div
+            class:list={[
+              "flex-1 bg-bg-card border border-border rounded-xl p-6",
+              i % 2 === 0 ? "md:mr-auto md:pr-12 md:w-[calc(50%-40px)]" : "md:ml-auto md:pl-12 md:w-[calc(50%-40px)]",
+            ]}
+          >
+            <h3 class="font-display text-lg font-semibold mb-2">{step.title}</h3>
+            <p class="text-text-muted text-sm leading-relaxed">{step.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
