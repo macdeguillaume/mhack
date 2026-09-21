@@ -7,9 +7,9 @@ export interface Stat {
 
 export const stats: Stat[] = [
   {
-    value: 18,
+    value: 20,
     suffix: "%",
-    label: "Taux de connexion",
+    label: "d'appels connectés",
     comparison: "vs 4-7% en moyenne",
   },
   {
