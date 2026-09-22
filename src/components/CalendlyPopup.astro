@@ -1,23 +1,10 @@
 <script>
-  const CALENDLY_URL = "https://calendly.com/lineup/30min";
+  const MEETING_URL = "https://app.minari.ai/shared/700f106a-0bc7-4740-8fa6-08d5b004284b";
 
-  function openCalendly(e: Event) {
-    e.preventDefault();
-    // @ts-ignore
-    if (window.Calendly) {
-      // @ts-ignore
-      window.Calendly.initPopupWidget({ url: CALENDLY_URL });
-    } else {
-      window.open(CALENDLY_URL, "_blank");
-    }
-  }
-
-  // Attach to all Calendly buttons
   document.querySelectorAll("[data-calendly]").forEach((btn) => {
-    btn.addEventListener("click", openCalendly);
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.open(MEETING_URL, "_blank");
+    });
   });
 </script>
-
-<!-- Calendly CSS & JS -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
