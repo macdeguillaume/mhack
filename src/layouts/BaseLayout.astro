@@ -6,7 +6,7 @@ interface Props {
 
 const {
   title = "lineup — Head of Sales externalisé",
-  description = "lineup génère des rendez-vous qualifiés pour votre équipe commerciale grâce au cold calling B2B nouvelle génération.",
+  description = "lineup — Agence de cold call B2B en France. Head of Sales externalisé à 3 000€/mois : audit ICP, scripts sur mesure, cold calls quotidiens et RDV qualifiés livrés dans votre agenda.",
 } = Astro.props;
 
 const siteUrl = "https://lineup.fr";
@@ -42,13 +42,42 @@ import "../styles/global.css";
     <!-- JSON-LD -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": "ProfessionalService",
       "name": "lineup",
       "url": siteUrl,
       "description": description,
       "foundingDate": "2024",
-      "areaServed": "FR",
-      "serviceType": "Cold Calling B2B",
+      "areaServed": {
+        "@type": "Country",
+        "name": "France",
+      },
+      "priceRange": "3 000€/mois",
+      "knowsAbout": [
+        "Cold calling B2B",
+        "Prospection téléphonique B2B",
+        "Head of Sales externalisé",
+        "Génération de rendez-vous qualifiés",
+        "Externalisation commerciale B2B",
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services lineup",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Head of Sales externalisé",
+            "description": "Stratégie, systèmes et exécution cold call B2B. Audit ICP, scripts sur mesure, cold calls quotidiens, reporting hebdo.",
+            "price": "3000",
+            "priceCurrency": "EUR",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "3000",
+              "priceCurrency": "EUR",
+              "unitText": "mois",
+            },
+          },
+        ],
+      },
       "sameAs": ["https://www.linkedin.com/company/lineup"],
     })} />
 

@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://lineup.fr/sitemap.xml
+
+# LLM discovery
+LLMs-txt: https://lineup.fr/llms.txt
