@@ -1,69 +1,45 @@
 ---
-import { plans } from "../data/pricing";
+import { plan } from "../data/pricing";
 ---
 
 <section id="offres" class="py-24">
-  <div class="mx-auto max-w-6xl px-6">
+  <div class="mx-auto max-w-3xl px-6">
     <div class="text-center mb-16 reveal">
       <h2 class="font-display text-3xl md:text-4xl font-bold mb-4">
-        Des <span class="text-gold">offres</span> claires
+        Pas un centre de cold call.<br/>
+        <span class="text-gold">Un Head of Sales qui appelle. C'est rare.</span>
       </h2>
       <p class="text-text-muted max-w-xl mx-auto">
         Pas de frais cachés, pas d'engagement annuel. On bosse au mois.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-6">
-      {plans.map((plan, i) => (
-        <div
-          class:list={[
-            "reveal relative bg-bg-card border rounded-xl p-8 flex flex-col",
-            plan.popular
-              ? "border-gold ring-1 ring-gold/30"
-              : "border-border",
-          ]}
-          style={`transition-delay: ${i * 100}ms`}
-        >
-          {plan.popular && (
-            <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-white text-xs font-semibold px-3 py-1 rounded-full">
-              Populaire
-            </span>
-          )}
+    <div class="reveal relative bg-bg-card border border-gold ring-1 ring-gold/30 rounded-xl p-10 max-w-lg mx-auto">
+      <h3 class="font-display text-2xl font-semibold mb-2">{plan.name}</h3>
+      <p class="text-text-muted text-sm mb-6">{plan.description}</p>
 
-          <h3 class="font-display text-xl font-semibold mb-2">{plan.name}</h3>
-          <p class="text-text-muted text-sm mb-6">{plan.description}</p>
+      <div class="mb-8">
+        <span class="font-display text-5xl font-bold">{plan.price}</span>
+        <span class="text-text-muted text-sm">{plan.period}</span>
+      </div>
 
-          <div class="mb-6">
-            <span class="font-display text-4xl font-bold">{plan.price}</span>
-            {plan.period && (
-              <span class="text-text-muted text-sm">{plan.period}</span>
-            )}
-          </div>
+      <ul class="space-y-3 mb-10">
+        {plan.features.map((feature) => (
+          <li class="flex items-start gap-2 text-sm">
+            <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-text-muted">{feature}</span>
+          </li>
+        ))}
+      </ul>
 
-          <ul class="space-y-3 mb-8 flex-1">
-            {plan.features.map((feature) => (
-              <li class="flex items-start gap-2 text-sm">
-                <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-                <span class="text-text-muted">{feature}</span>
-              </li>
-            ))}
-          </ul>
-
-          <button
-            data-calendly="true"
-            class:list={[
-              "w-full py-3 rounded-lg font-semibold text-sm transition-colors cursor-pointer",
-              plan.popular
-                ? "bg-accent hover:bg-accent-hover text-white font-semibold"
-                : "border border-border hover:border-gold text-text hover:text-gold",
-            ]}
-          >
-            {plan.cta}
-          </button>
-        </div>
-      ))}
+      <button
+        data-calendly="true"
+        class="w-full py-3.5 rounded-lg font-semibold text-base bg-accent hover:bg-accent-hover text-white transition-colors cursor-pointer"
+      >
+        {plan.cta}
+      </button>
     </div>
   </div>
 </section>
